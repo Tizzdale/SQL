@@ -1,4 +1,4 @@
-CHALLENGE 1
+CHALLENGE 1 - JOIN Statements
 
 
 /*Creating two tables with various peoples hobbies. */
@@ -51,3 +51,48 @@ SELECT p.name AS Name, h.name AS Hobby
 FROM persons AS p
 JOIN hobbies AS h ON p.id = h.person_id
 WHERE p.name = "Bobby McBobbyFace";
+
+
+
+CHALLENGE 2 - LEFT OUTER JOIN Statement
+
+
+/*Created tables with customer and order information. */
+
+CREATE TABLE customers (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    name TEXT,
+    email TEXT);
+    
+INSERT INTO customers (name, email) VALUES ("Doctor Who", "doctorwho@timelords.com");
+INSERT INTO customers (name, email) VALUES ("Harry Potter", "harry@potter.com");
+INSERT INTO customers (name, email) VALUES ("Captain Awesome", "captain@awesome.com");
+
+CREATE TABLE orders (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    customer_id INTEGER,
+    item TEXT,
+    price REAL);
+
+INSERT INTO orders (customer_id, item, price)
+    VALUES (1, "Sonic Screwdriver", 1000.00);
+INSERT INTO orders (customer_id, item, price)
+    VALUES (2, "High Quality Broomstick", 40.00);
+INSERT INTO orders (customer_id, item, price)
+    VALUES (1, "TARDIS", 1000000.00);
+    
+    
+/*List of customer names, emails, items they have ordered and the prices. */
+
+SELECT c.name, c.email, o.item, o.price
+FROM customers AS c
+LEFT OUTER JOIN orders AS o ON c.id = o.customer_id;
+
+
+/*List of customer names, emails, iand how much they have spent. */
+
+SELECT c.name,c.email,sum(o.price) AS spent
+FROM customers AS c
+LEFT OUTER JOIN orders AS o ON c.id=o.customer_id
+GROUP BY c.name
+ORDER BY spent desc;
