@@ -1,0 +1,24 @@
+/*Creating a new store table and adding data. */
+
+CREATE TABLE store 
+  (id INTEGER PRIMARY KEY, 
+  type TEXT, 
+  quantity INTEGER, 
+  cost INTEGER, 
+  color TEXT);
+
+INSERT INTO store VALUES (1,'hat',2,4.99,"black");
+INSERT INTO store VALUES (2,'hat',2,4.99,"white");
+INSERT INTO store VALUES (3,'hat',2,4.99,"red");
+INSERT INTO store VALUES (4,'shirt',2,9.99,"black");
+INSERT INTO store VALUES (5,'shirt',2,9.99,"pink");
+INSERT INTO store VALUES (6,'shirt',2,9.99,"orange");
+INSERT INTO store VALUES (7,'pants',2,14.99,"black");
+INSERT INTO store VALUES (8,'pants',2,14.99,"black");
+INSERT INTO store VALUES (9,'pants',2,14.99,"green");
+INSERT INTO store VALUES (10,'sweater',2,19.99,"purple");
+INSERT INTO store VALUES (11,'sweater',2,19.99,"yellow");
+INSERT INTO store VALUES (12,'jacket',2,29.99,"black");
+INSERT INTO store VALUES (13,'jacket',2,29.99,"orange");
+INSERT INTO store VALUES (14,'jeans',2,24.99,"purple");
+INSERT INTO store VALUES (15,'jeans',2,24.99,"blue");
