@@ -186,7 +186,7 @@ ON h.person_id = p.id;
 
 
 
-/*List oeahc paur of friends. */
+/*Using self JOINs to show a list of each pair of friends form data within two tables. */
 
 SELECT a.fullname, b.fullname 
 FROM friends
